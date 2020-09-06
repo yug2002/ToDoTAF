@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{6071984F-86E8-4CBB-98A0-A625133EAF3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{6071984F-86E8-4CBB-98A0-A625133EAF3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UI", "Core.UI\Core.UI.csproj", "{2427D756-3210-4C2E-99BE-D857F36217A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.UI", "Core.UI\Core.UI.csproj", "{2427D756-3210-4C2E-99BE-D857F36217A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.API", "Core.API\Core.API.csproj", "{C80A9C1F-1E17-44A4-8E88-CECE6EB75469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.API", "Core.API\Core.API.csproj", "{C80A9C1F-1E17-44A4-8E88-CECE6EB75469}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{13344E07-9B7C-42F8-98F7-EFAF11EEF1DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.UI", "Tests.UI\Tests.UI.csproj", "{745F8A5D-94BC-4B0B-9C68-3280F47DB2CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.UI", "Tests.UI\Tests.UI.csproj", "{745F8A5D-94BC-4B0B-9C68-3280F47DB2CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.API", "Tests.API\Tests.API.csproj", "{37BCB4D1-44F0-4980-9AF7-961260926BEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.API", "Tests.API\Tests.API.csproj", "{37BCB4D1-44F0-4980-9AF7-961260926BEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pages", "Pages\Pages.csproj", "{4A76E57D-EFC9-4EE4-9695-10AA26F7A24B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationPages", "Pages\ApplicationPages.csproj", "{4A76E57D-EFC9-4EE4-9695-10AA26F7A24B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyContainer", "DependencyContainer\DependencyContainer.csproj", "{7CD4E30C-5F9E-4583-A157-77B560A25AFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyContainer", "DependencyContainer\DependencyContainer.csproj", "{7CD4E30C-5F9E-4583-A157-77B560A25AFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

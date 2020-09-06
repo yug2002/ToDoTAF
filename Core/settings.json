@@ -1,0 +1,9 @@
+{
+  "TestSettings": {
+    "BaseUrl": "https://todo.microsoft.com/tasks/",
+    "Login": "yug2002@yandex.by",
+    "Password": "12344321abcd",    
+    "Browser": "Chrome",
+    "GridUrl": "http://localhost:4444/wd/hub"    
+  }
+}

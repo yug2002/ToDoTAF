@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core.UI\Core.UI.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Pages\ApplicationPages.csproj" />
   </ItemGroup>
 
 </Project>

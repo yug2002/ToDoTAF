@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pages.Interfaces
+namespace ApplicationPages.Interfaces
 {
     public interface IRepository<T> where T: IBasePage
     {

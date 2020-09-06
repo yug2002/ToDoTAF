@@ -1,21 +1,26 @@
-﻿using OpenQA.Selenium;
-using Pages.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Core;
+using OpenQA.Selenium;
+using ApplicationPages.Interfaces;
+using ApplicationPages.Elements;
+using ApplicationPages.Elements.WebElements;
+using Core.Helpers;
+using ApplicationPages.Base;
 
-namespace Pages
+namespace ApplicationPages
 {
-    public class HomePage : IBasePage
-    {
-        IWebDriver _webDriver;
-        public HomePage(IWebDriver webDriver)
-        {
-            _webDriver = webDriver;
+    public class HomePage : BasePage
+    {       
+        public HomePage(IWebDriver webDriver, ITestSettings config) : base(webDriver, config)
+        {            
         }
-        public void Open(string url)
+
+        public void Open()
         {
-            _webDriver.Url = url;
+            this.Open(_settings.BaseUrl);
         }
+
+        public Element Title() => this.FindElement(By.XPath("//h1/span"));
+
+        public Button ButtonByName(string name) => this.FindElement<Button>(By.XPath($"//a[./*[text()='{name}']]"));
     }
 }

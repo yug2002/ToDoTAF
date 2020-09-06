@@ -1,15 +1,17 @@
-﻿using Pages.Interfaces;
+﻿using ApplicationPages.Base;
+using ApplicationPages.Interfaces;
+using Core;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pages
+namespace ApplicationPages
 {
-    public class LoginPage : IBasePage
+    public class LoginPage : BasePage
     {
-        public void Open(string url)
+        public LoginPage(IWebDriver webDriver, ITestSettings settings) : base(webDriver, settings)
         {
-            throw new NotImplementedException();
-        }
+        }       
     }
 }

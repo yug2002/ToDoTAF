@@ -1,8 +1,8 @@
-﻿using Autofac;
+﻿using ApplicationPages;
+using ApplicationPages.Interfaces;
+using Autofac;
+using Core;
 using Core.UI;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DependencyContainer
 {
@@ -12,6 +12,8 @@ namespace DependencyContainer
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<BrowserFactory>().As<IBrowserFactory>().SingleInstance();
+            builder.RegisterType<ApplicationConfiguration>().AsSelf().SingleInstance();
+            builder.RegisterType<Pages>().As<IUoW>();
             return builder.Build();
         }
     }

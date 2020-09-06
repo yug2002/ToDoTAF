@@ -1,22 +1,26 @@
 ﻿using OpenQA.Selenium;
-using Pages.Interfaces;
-using Pages.PageRepository;
+using ApplicationPages.Interfaces;
+using ApplicationPages.PageRepository;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Core;
 
-namespace Pages
+namespace ApplicationPages
 {
-    public class Pages
+    public class Pages : IUoW
     {
         IWebDriver _webDriver;
+        ITestSettings _testSetting;
 
-        public Pages(IWebDriver webDriver)
+        public Pages(IWebDriver webDriver, ITestSettings testSettings)
         {
             _webDriver = webDriver;
+            _testSetting = testSettings;
         }
 
-        public IRepository<HomePage> HomePage => new HomePageRepository(_webDriver);
+        public IRepository<HomePage> HomePage => new HomePageRepository(_webDriver, _testSetting);
 
+        public IRepository<LoginPage> LoginPage => throw new NotImplementedException();
     }
 }

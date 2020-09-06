@@ -1,8 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Core.UI
 {
@@ -12,7 +10,7 @@ namespace Core.UI
 
         public BrowserFactory() { }
 
-        private static IWebDriver GetChromeBrowser()
+        private IWebDriver GetChromeBrowser()
         {
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--whitelisted-ips");

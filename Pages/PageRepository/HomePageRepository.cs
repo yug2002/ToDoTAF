@@ -1,21 +1,24 @@
 ﻿using OpenQA.Selenium;
-using Pages.Interfaces;
+using ApplicationPages.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Core;
 
-namespace Pages.PageRepository
+namespace ApplicationPages.PageRepository
 {
     public class HomePageRepository : IRepository<HomePage>
     {
         IWebDriver _webDriver;
-        public HomePageRepository(IWebDriver webDriver)
+        ITestSettings _testSetting;
+        public HomePageRepository(IWebDriver webDriver, ITestSettings testSetting)
         {
             _webDriver = webDriver;
+            _testSetting = testSetting;
         }
         public HomePage Get()
         {
-            return new HomePage(_webDriver);
+            return new HomePage(_webDriver, _testSetting);
         }
     }
 }
