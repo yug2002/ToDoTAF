@@ -3,10 +3,8 @@ using ApplicationPages.Interfaces;
 using Core;
 using Core.Helpers;
 using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ApplicationPages.Base
 {
@@ -25,23 +23,23 @@ namespace ApplicationPages.Base
             _webDriver.Url = url;
         }
 
-        public Element FindElement(By by)
+        protected Element FindElement(By by)
         {
             return ObjectFactory.Get<Element>(_webDriver.FindElement(by));
         }
 
-        public T FindElement<T>(By by) where T : Element
+        protected T FindElement<T>(By by) where T : Element
         { 
             return ObjectFactory.Get<T>(_webDriver.FindElement(by));
         }
 
-        public List<Element> FindElements(By by)
+        protected List<Element> FindElements(By by)
         {
             var listElements = _webDriver.FindElements(by).ToList();
             return listElements.Select(element => ObjectFactory.Get<Element>(element)).ToList();
         }
 
-        public List<T> FindElements<T>(By by) where T: Element
+        protected List<T> FindElements<T>(By by) where T: Element
         {
             var listElements = _webDriver.FindElements(by).ToList();
             return listElements.Select(element => ObjectFactory.Get<T>(element)).ToList();
