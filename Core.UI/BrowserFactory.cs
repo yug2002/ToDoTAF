@@ -1,5 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using Core.Helpers;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+
 using System;
 
 namespace Core.UI
@@ -7,8 +9,12 @@ namespace Core.UI
     public class BrowserFactory : IBrowserFactory
     {
         private IWebDriver _webdriver;
+        private ILog _log;
 
-        public BrowserFactory() { }
+        public BrowserFactory(ILog log)
+        {
+            _log = log;
+        }
 
         private IWebDriver GetChromeBrowser()
         {

@@ -10,7 +10,8 @@ namespace ApplicationPages
 {
     public class HomePage : BasePage
     {       
-        public HomePage(IWebDriver webDriver, ITestSettings config) : base(webDriver, config)
+
+        public HomePage(IWebDriver webDriver, ITestSettings config, ILog log) : base(webDriver, config, log)
         {            
         }
 

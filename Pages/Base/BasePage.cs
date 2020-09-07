@@ -4,6 +4,7 @@ using Core;
 using Core.Helpers;
 using OpenQA.Selenium;
 using Selenium.WebDriver.WaitExtensions;
+
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,10 +14,13 @@ namespace ApplicationPages.Base
     {
         protected IWebDriver _webDriver;
         protected ITestSettings _settings;
-        public BasePage(IWebDriver webDriver, ITestSettings settings)
+        protected ILog _log;
+
+        public BasePage(IWebDriver webDriver, ITestSettings settings, ILog log)
         {
             _webDriver = webDriver;
             _settings = settings;
+            _log = log;
         }
 
         public virtual void Open(string url)
@@ -27,27 +31,27 @@ namespace ApplicationPages.Base
         protected Element FindElement(By by)
         {
             WaitElement(by);
-            return ObjectFactory.Get<Element>(_webDriver.FindElement(by));
+            return ObjectFactory.Get<Element>(_webDriver.FindElement(by), _log);
         }
 
         protected T FindElement<T>(By by) where T : Element
         {
             WaitElement(by);
-            return ObjectFactory.Get<T>(_webDriver.FindElement(by));
+            return ObjectFactory.Get<T>(_webDriver.FindElement(by), _log);
         }
 
         protected List<Element> FindElements(By by)
         {
             Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
-            return listElements.Select(element => ObjectFactory.Get<Element>(element)).ToList();
+            return listElements.Select(element => ObjectFactory.Get<Element>(element, _log)).ToList();
         }
 
         protected List<T> FindElements<T>(By by) where T: Element
         {
             Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
-            return listElements.Select(element => ObjectFactory.Get<T>(element)).ToList();
+            return listElements.Select(element => ObjectFactory.Get<T>(element, _log)).ToList();
         }
 
         protected void WaitElement(By by, int delay)
