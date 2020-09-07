@@ -23,17 +23,17 @@ namespace Core.UI
             return new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options);
         }
 
-        private void SetBrowser(SupportedBrowsers browser)
+        private void SetBrowser(string browser)
         {
             this._webdriver = browser switch
             {
-                SupportedBrowsers.Chrome => GetChromeBrowser(),
-                SupportedBrowsers.FireFox => null,
+                "Chrome" => GetChromeBrowser(),
+                "FireFox" => null,
                 _ => throw new Exception("There is no any browser"),
             };
         }
 
-        public void Start(SupportedBrowsers browser)
+        public void Start(string browser)
         {
             SetBrowser(browser);
             _webdriver.Manage().Window.Maximize();

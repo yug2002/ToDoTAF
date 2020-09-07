@@ -7,5 +7,6 @@
         string GridUrl { get; set; }
         string Login { get; set; }
         string Password { get; set; }
+        int Timeout { get; set; }
     }
 }

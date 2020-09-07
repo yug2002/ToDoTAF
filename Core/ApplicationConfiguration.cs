@@ -17,6 +17,7 @@ namespace Core
 
         public T GetApplicationConfiguration<T>() where T : ITestSettings
         {
+            //var config = new TestSettings();
             var configuration = ObjectFactory.Get<T>();
             var iConfig = GetConfigurationRoot();
             iConfig.GetSection(typeof(T).Name)

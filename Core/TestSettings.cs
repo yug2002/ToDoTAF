@@ -11,5 +11,7 @@
         public string Browser { get; set; }
 
         public string GridUrl { get; set; }
+
+        public int Timeout { get; set; } 
     }
 }

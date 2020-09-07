@@ -3,6 +3,7 @@ using ApplicationPages.Interfaces;
 using Core;
 using Core.Helpers;
 using OpenQA.Selenium;
+using Selenium.WebDriver.WaitExtensions;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,24 +26,38 @@ namespace ApplicationPages.Base
 
         protected Element FindElement(By by)
         {
+            WaitElement(by);
             return ObjectFactory.Get<Element>(_webDriver.FindElement(by));
         }
 
         protected T FindElement<T>(By by) where T : Element
-        { 
+        {
+            WaitElement(by);
             return ObjectFactory.Get<T>(_webDriver.FindElement(by));
         }
 
         protected List<Element> FindElements(By by)
         {
+            Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
             return listElements.Select(element => ObjectFactory.Get<Element>(element)).ToList();
         }
 
         protected List<T> FindElements<T>(By by) where T: Element
         {
+            Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
             return listElements.Select(element => ObjectFactory.Get<T>(element)).ToList();
+        }
+
+        protected void WaitElement(By by, int delay)
+        {
+            _webDriver.Wait(delay).ForElement(by).ToExist();
+        }
+
+        protected void WaitElement(By by)
+        {
+            _webDriver.Wait(_settings.Timeout).ForElement(by).ToExist();
         }
     }
 }

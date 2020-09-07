@@ -5,7 +5,7 @@ namespace Core.UI
     public interface IBrowserFactory
     {
         IWebDriver GetDriver();
-        void Start(SupportedBrowsers browser);
+        void Start(string browser);
         void Stop();
     }
 }
