@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="C:\Users\Yury_Hamaniuk\.nuget\packages\nlog.config\4.7.4\contentFiles\any\any\NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

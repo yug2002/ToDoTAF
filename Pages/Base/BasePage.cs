@@ -30,6 +30,7 @@ namespace ApplicationPages.Base
 
         protected Element FindElement(By by)
         {
+            _log.Logger.Debug($"find element {by}");
             WaitElement(by);
             return ObjectFactory.Get<Element>(_webDriver.FindElement(by), _log);
         }

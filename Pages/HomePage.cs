@@ -17,6 +17,7 @@ namespace ApplicationPages
 
         public void Open()
         {
+            _log.Logger.Debug($"Open URL {_settings.BaseUrl}");
             this.Open(_settings.BaseUrl);
         }
 

@@ -41,6 +41,7 @@ namespace Core.UI
 
         public void Start(string browser)
         {
+            _log.Logger.Debug($"Browser {browser} has started");
             SetBrowser(browser);
             _webdriver.Manage().Window.Maximize();
         }
@@ -52,6 +53,7 @@ namespace Core.UI
 
         public void Stop()
         {
+            _log.Logger.Debug($"Browser has stopped");
             _webdriver.Quit();
         }
     }
