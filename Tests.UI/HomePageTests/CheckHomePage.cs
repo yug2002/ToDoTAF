@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,7 @@ namespace Tests.UI.HomePageTests
         [Test]
         public void CheckThatHomePageIsOpened()
         {
-            
+            HomePage.Title().Displayed().Should().BeTrue();            
         }
     }
 }

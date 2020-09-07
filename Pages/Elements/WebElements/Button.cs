@@ -8,12 +8,13 @@ namespace ApplicationPages.Elements.WebElements
 {
     public class Button : Element
     {
-        public Button(IWebElement element, ILog log) : base(element, log)
+        public Button(IWebElement element, By by, ILog log) : base(element, by, log)
         {
         }
 
         public void Click()
         {
+            this._log.Debug($"Click '{_by}' element");
             this.WebElement.Click();
         } 
 

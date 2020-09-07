@@ -8,7 +8,7 @@ namespace ApplicationPages.Elements.WebElements
 {
     public class Input : Element
     {
-        public Input(IWebElement element, ILog log) : base(element, log)
+        public Input(IWebElement element, By by, ILog log) : base(element, by, log)
         {
         }
 

@@ -4,6 +4,13 @@ namespace Core.Helpers
 {
     public interface ILog
     {
-        Logger Logger { get; }
+        void Debug(string text);
+
+        void Info(string text);
+
+        void Error(string text);
+
+        void Warn(string text);
+       
     }
 }

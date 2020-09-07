@@ -7,6 +7,26 @@ namespace Core.Helpers
 {
     public class Log : ILog
     {
-        public Logger Logger => LogManager.GetCurrentClassLogger();
+        private Logger Logger => LogManager.GetCurrentClassLogger();
+
+        public void Debug(string text)
+        {
+            Logger.Debug(text);
+        }
+
+        public void Info(string text)
+        {
+            Logger.Info(text);
+        }
+
+        public void Error(string text)
+        {
+            Logger.Error(text);
+        }
+
+        public void Warn(string text)
+        {
+            Logger.Warn(text);
+        }
     }
 }

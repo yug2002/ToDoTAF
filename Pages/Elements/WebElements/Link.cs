@@ -8,7 +8,7 @@ namespace ApplicationPages.Elements.WebElements
 {
     public class Link : Element
     {
-        public Link(IWebElement element, ILog log) : base(element, log)
+        public Link(IWebElement element, By by, ILog log) : base(element, by, log)
         {
         }
 

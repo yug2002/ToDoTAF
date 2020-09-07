@@ -30,29 +30,29 @@ namespace ApplicationPages.Base
 
         protected Element FindElement(By by)
         {
-            _log.Logger.Debug($"find element {by}");
+            _log.Debug($"find element {by}");
             WaitElement(by);
-            return ObjectFactory.Get<Element>(_webDriver.FindElement(by), _log);
+            return ObjectFactory.Get<Element>(_webDriver.FindElement(by), by, _log);
         }
 
         protected T FindElement<T>(By by) where T : Element
         {
             WaitElement(by);
-            return ObjectFactory.Get<T>(_webDriver.FindElement(by), _log);
+            return ObjectFactory.Get<T>(_webDriver.FindElement(by), by, _log);
         }
 
         protected List<Element> FindElements(By by)
         {
             Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
-            return listElements.Select(element => ObjectFactory.Get<Element>(element, _log)).ToList();
+            return listElements.Select(element => ObjectFactory.Get<Element>(element, by, _log)).ToList();
         }
 
         protected List<T> FindElements<T>(By by) where T: Element
         {
             Wait.For(() => _webDriver.FindElements(by).Count > 0);
             var listElements = _webDriver.FindElements(by).ToList();
-            return listElements.Select(element => ObjectFactory.Get<T>(element, _log)).ToList();
+            return listElements.Select(element => ObjectFactory.Get<T>(element, by, _log)).ToList();
         }
 
         protected void WaitElement(By by, int delay)
