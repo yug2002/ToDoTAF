@@ -1,4 +1,5 @@
-﻿using ApplicationPages.Elements;
+﻿using ApplicationPages.Components;
+using ApplicationPages.Elements;
 using ApplicationPages.Interfaces;
 using Core;
 using Core.Helpers;
@@ -63,6 +64,11 @@ namespace ApplicationPages.Base
         protected void WaitElement(By by)
         {
             _webDriver.Wait(_settings.Timeout).ForElement(by).ToExist();
+        }
+
+        protected Component FindComponent(By by)
+        {
+            return ObjectFactory.Get<Component>(_webDriver.FindElement(by), by, _log);
         }
     }
 }

@@ -1,9 +1,7 @@
-﻿using Core.Helpers;
+﻿using ApplicationPages.Components;
+using Core.Helpers;
 using OpenQA.Selenium;
-using Selenium.WebDriver.WaitExtensions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ApplicationPages.Elements
 {
@@ -29,6 +27,13 @@ namespace ApplicationPages.Elements
         {
             Wait.For(() => WebElement.Displayed);
             return WebElement.Displayed;
+        }
+
+        public Component FindComponent(By by)
+        {
+            var element = this.WebElement.FindElement(by);
+            var comp = ObjectFactory.Get<Component>(element, _by, by, _log);
+            return comp;
         }
     }
 }
